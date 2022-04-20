@@ -22,7 +22,6 @@ public class move : MonoBehaviour
 
         RotatePlayer(new Vector3(0f, 180, 0f));
 
-        if(!mv) { 
             if (Input.GetKey(KeyCode.W)) // w를 눌렀을 때
             {
 
@@ -46,22 +45,13 @@ public class move : MonoBehaviour
             {
                 animator.SetBool("run", false); // Walking 애니메이션 종료와 Ready Idle 애니메이션 실행
             }
-        }
 
         if (Input.GetKey(KeyCode.J))
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
                 mv = true; 
-                if (false == lp)
-                {
-                    animator.SetBool("punchL", true);
-                    lp = true;
-                }
-            }
-            else
-            {
-                lp = false;
+                animator.SetBool("punchL", true);
             }
         }
         else
